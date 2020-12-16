@@ -1,12 +1,12 @@
 version: 0.0
 os: linux
 files:
-  - source:testing
+  - source:/testing
     destination: /var/www/html/
 permissions:
   - object: /var/www/html/testing
-    owner: deploy
-    group: deploy
+    owner: root
+    group: root
     pattern: "*"
     mode: 775
     type:
@@ -14,8 +14,8 @@ permissions:
       - directory
 hooks:
   BeforeInstall:
-    - location: deploy_scripts/codeclear.sh
-      runas: deploy
+    - location: /codeclear.sh
+      runas: root
   AfterInstall:
-    - location: deploy_scripts/codepull.sh
-      runas: deploy
+    - location: /codepull.sh
+      runas: root
