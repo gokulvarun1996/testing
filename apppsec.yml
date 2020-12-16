@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source:/testing
+  - source: /testing_docs/
     destination: /var/
 permissions:
-  - object: /var/testing
+  - object: /var/testing_docs/
     owner: root
     group: root
     pattern: "*"
