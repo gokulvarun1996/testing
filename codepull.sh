@@ -1,2 +1,3 @@
 #!/bin/bash
-chown -R apache:apache /var/www/html/testing
+chown -R root:root /var/testing
+sudo npm install
