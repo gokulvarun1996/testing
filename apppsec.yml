@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source:/testing
-    destination: /var/www/html/
+    destination: /var/
 permissions:
-  - object: /var/www/html/testing
+  - object: /var/testing
     owner: root
     group: root
     pattern: "*"
