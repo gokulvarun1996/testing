@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+files:
+  - source:testing
+    destination: /var/www/html/
+permissions:
+  - object: /var/www/html/testing
+    owner: deploy
+    group: deploy
+    pattern: "*"
+    mode: 775
+    type:
+      - file
+      - directory
+hooks:
+  BeforeInstall:
+    - location: deploy_scripts/codeclear.sh
+      runas: deploy
+  AfterInstall:
+    - location: deploy_scripts/codepull.sh
+      runas: deploy
